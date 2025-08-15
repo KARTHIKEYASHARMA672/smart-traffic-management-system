@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Traffic Management</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Smart Traffic Management System</h1>
+    <p>Real-time monitoring & adaptive signal timing using data-driven decisions</p>
+    <p id="clock"></p>
+  </header>
+
+  <section class="dashboard">
+    <div class="intersection">
+      <div class="direction" id="north">
+        <h2>North</h2>
+        <p>Vehicle Density: <span class="density">0</span></p>
+        <p>Green Time: <span class="time">0</span>s</p>
+        <p>Fuel Used: <span class="fuel">0</span> L</p>
+        <p>CO₂ Emissions: <span class="emissions">0</span> kg</p>
+      </div>
+      <div class="direction" id="south">
+        <h2>South</h2>
+        <p>Vehicle Density: <span class="density">0</span></p>
+        <p>Green Time: <span class="time">0</span>s</p>
+        <p>Fuel Used: <span class="fuel">0</span> L</p>
+        <p>CO₂ Emissions: <span class="emissions">0</span> kg</p>
+      </div>
+      <div class="direction" id="east">
+        <h2>East</h2>
+        <p>Vehicle Density: <span class="density">0</span></p>
+        <p>Green Time: <span class="time">0</span>s</p>
+        <p>Fuel Used: <span class="fuel">0</span> L</p>
+        <p>CO₂ Emissions: <span class="emissions">0</span> kg</p>
+      </div>
+      <div class="direction" id="west">
+        <h2>West</h2>
+        <p>Vehicle Density: <span class="density">0</span></p>
+        <p>Green Time: <span class="time">0</span>s</p>
+        <p>Fuel Used: <span class="fuel">0</span> L</p>
+        <p>CO₂ Emissions: <span class="emissions">0</span> kg</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="simulateSmartTraffic()">Simulate Traffic</button>
+      <button onclick="simulateEmergencySound()">Detect Emergency</button>
+      <button onclick="simulatePedestrian()">Detect Pedestrian</button>
+      <label>
+        <input type="checkbox" id="liveToggle" />
+        Live Simulation
+      </label>
+    </div>
+
+    <div class="insights">
+      <h2>Traffic Insights</h2>
+      <p>Total Vehicles: <span id="totalVehicles">0</span></p>
+      <p>Avg. CO₂ Emissions: <span id="avgCO2">0</span> kg</p>
+      <p>Most Congested: <span id="congestedDir">N/A</span></p>
+    </div>
+
+    <div class="pedestrian-status">
+      <h2>Pedestrian Detection</h2>
+      <p id="pedestrianStatus">No pedestrian detected</p>
+    </div>
+
+    <section class="chart-section">
+      <h2>Traffic Data Overview</h2>
+      <canvas id="trafficChart" width="600" height="300"></canvas>
+    </section>
+
+    <section class="chart-section">
+      <h2>CO₂ Emissions by Direction</h2>
+      <canvas id="emissionChart" width="300" height="300"></canvas>
+    </section>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
